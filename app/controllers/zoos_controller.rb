@@ -11,7 +11,29 @@ class ZoosController < ApplicationController
     @zoo = Zoo.new
   end
 
+  def create
+    @zoo = Zoo.new(zoo_params)
+    if(@zoo.save)
+      redirect_to zoos_path
+    else
+      render :new
+    end
+  end
+
   def edit
+  end
+
+  def update
+    if@zoo.update(zoo_params)
+      redirect_to @zoo
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @zoo.destroy
+    redirect_to zoos_path
   end
 
   private

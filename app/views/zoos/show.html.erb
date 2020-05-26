@@ -1,2 +1,12 @@
 <h1>Zoos#show</h1>
-<p>Find me in app/views/zoos/show.html.erb</p>
+<div class="ui card">
+  <div class="content">
+    <p class="header">
+      <%= @zoo.name %> <%= @zoo.name %>
+    </p>
+  </div>
+  <div class="extra content">
+    <%= link_to 'Edit', edit_zoo_path(@zoo) %> |
+    <%= link_to 'Back', zoos_path %>
+  </div>
+</div>
